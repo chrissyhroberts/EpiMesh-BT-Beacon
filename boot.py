@@ -16,8 +16,8 @@ SCAN_DURATION = 5000  # Duration of each scan in milliseconds
 SCAN_WINDOW = 50  # BLE scan window in milliseconds
 
 # Function to set the device's time
-SSID = "Moving Castle Guest WiFi"
-PASSWORD = "iobeyonlyangel"
+SSID = "Temporary WiFi"
+PASSWORD = "password"
 
 
 
