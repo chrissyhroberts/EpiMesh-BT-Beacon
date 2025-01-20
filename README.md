@@ -1,6 +1,40 @@
 # EpiMesh-BT-Beacon
 A Bluetooth Beacon Network for logging proximities of entities across time via Bluetooth - ESP32-C3 based.
 
+![su](https://github.com/user-attachments/assets/149aeffa-d5d1-435f-98e3-9b3d922b8cdf)
+
+
+## Summary
+
+Many problems in epidemiology and one health centre around the potential for events (i.e. transmission of infectious diseaes) to occur when two entities (any combination people, vectors, livestock, places) come in to close proximity. Transmission/event risk is generally higher with prolonged proximity. 
+
+Researchers often try to use GPS devices to measure proximity, but the functional limit of around 10m accuracy in GPS means that entities with the same geolocation might actually be as far apart as 30m, which is uninformative.
+
+This project provides code that can turn a cheap (~£5) WiFi/Bluetooth development board in to a bluetooth beacon and logger for proximity and duration of interactions. Because it's based on bluetooth it works within 10m. Caveat is that bluetooth doesn't pass through human bodies very well, so signal averaging may be useful. 
+
+In this prototype design, which is scalable to a large number of beacons in a 'mesh', each device connects to a temporary WiFi signal, sets the real time clock, then disconnects from WiFi. It then broadcasts its own MAC address via bluetooth. Meanwhile it periodically scans for nearby bluetooth signals, identifies which (if any) are relevant from a whitelist, then logs the signal strength (averaged across a period of seconds). The other devices do the same thing, and across time build a mesh data set of proximity data that can be used to identify instances when two, three or more devices came in to proximity. 
+
+The data are logged to a file on the device's flash memory with datetime, MAC address and signal strength. 
+
+## Use Cases
+
+### A group of people who interact  
+<img width="508" alt="Screenshot 2025-01-20 at 17 35 52" src="https://github.com/user-attachments/assets/cf000033-0672-4b55-8bcd-e1a108b7b23b" />  
+
+### Entities crossing a geofence  
+<img width="510" alt="Screenshot 2025-01-20 at 17 36 19" src="https://github.com/user-attachments/assets/0d8c26b3-2b02-4e1e-b09b-36e6935c8f0a" />   
+
+This could also have a double layered fence to establish direction of travel.  
+
+### Interactions between livestock, wildlife and burrows  
+<img width="507" alt="Screenshot 2025-01-20 at 17 37 16" src="https://github.com/user-attachments/assets/e0d23518-060f-4ca3-a4c4-fb8166653652" />  
+
+### Utilisation of public services, like boreholes or public toilets  
+<img width="500" alt="Screenshot 2025-01-20 at 17 37 44" src="https://github.com/user-attachments/assets/2fa11f40-1b19-4389-8450-d91e154d5337" />  
+
+Under this model, we could also flag utilisation by people carrying bluetooth enabled smart-devices, rather than ESP32-based beacons  
+
+
 ## Hardware
 
 * ESP32-C3 Development Board (WiFi/Bluetooth)  
