@@ -16,6 +16,14 @@ In this prototype design, which is scalable to a large number of beacons in a 'm
 
 The data are logged to a file on the device's flash memory with datetime, MAC address and signal strength. 
 
+### WORK IN PROGRESS
+
+This is a prototype that isn't yet ready for field trials.
+Outstanding issues
+
+* Power management is poor - May need some kind of synchronisation and wake/sleep cycle to extend battery life
+* Real time clock drift - Any synchronisation effort will be hampered by drift on the onboard RTC. A standalone RTC with cell battery may be needed.
+
 ## Use Cases
 
 ### A group of people who interact  
