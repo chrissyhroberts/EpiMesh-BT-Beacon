@@ -96,7 +96,15 @@ Next open **Thonny** https://thonny.org/
 Configure the interpreter for Micropython (ESP32)
 You should see the files on the micropython device in the lower 'files' section. 
 
+
 Replace the `boot.py` script with the one from this repo. 
+
+Edit the top of the file to add your wifi network and password
+Decide if you're using a whitelist. If so, set the prefixes to match those in your list of MAC addresses
+
+`WHITELIST_PREFIXES = ["E4:B3:23"]  # List of address prefixes to filter devices`
+`WHITELIST_PREFIXES = ["E4:B3:23","E4:B6:E3"]  # List of address prefixes to filter devices`
+
 Save and test by running the script. You should see some useful feedback
 
 >MPY: soft reboot  
@@ -122,6 +130,10 @@ Scanning for devices...
 [DEBUG] Logging: E4:B3:23:D3:76:26,-89,250120162540  
 [DEBUG] Logging: E4:B3:23:D5:EC:42,-72,250120162540  
 Idling for 55 seconds...  
+
+Finally, repeat for all your devices. Update the whitelist so that all mesh devices are included. 
+
+That's it!
 
 
 
