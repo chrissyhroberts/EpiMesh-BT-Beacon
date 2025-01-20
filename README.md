@@ -167,7 +167,17 @@ Idling for 55 seconds...
 
 Finally, repeat for all your devices. Update the whitelist so that all mesh devices are included. 
 
-That's it!
+## Data
+
+|DEVICE A                          |DEVICE B|DEVICE C|
+|----------------------------------|--------|--------|
+|E4:B3:23:D3:76:26,-89,250120162540|
+|E4:B3:23:D5:EC:42,-72,250120162540|
+|E4:B3:23:D3:76:26,-90,250120162640|
+|E4:B3:23:D5:EC:42,-81,250120162640|
+|E4:B3:23:D3:76:26,-91,250120162740|
+|E4:B3:23:D5:EC:42,-81,250120162740|
+|E4:B3:23:D3:76:26,-90,250120162840|
 
 
 
